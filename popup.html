@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="myapp" ng-csp>
+    <head>
+        <title>Export tabs url</title>
+        <style>
+            body {
+                font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+                font-size: 100%;
+            }
+        </style>
+        <script src="angular.min.js"></script>
+        <script src="popup.js"></script>
+    </head>
+    <body>
+
+        <div ng-controller="mainController">
+
+            <input type="button" ng-click="getTabsUrl();" value="Lista de tabs abertas"></input>
+            
+            <ul style="list-style-type:none">
+                <li ng-repeat="objeto in urlList track by objeto.id">
+                [{{objeto.title}}]({{objeto.url}})
+                </li>
+            </ul>
+
+        </div>
+
+    </body>
+</html>
